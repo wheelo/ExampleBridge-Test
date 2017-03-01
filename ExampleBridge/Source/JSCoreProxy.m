@@ -2,11 +2,11 @@
 //  ChakraProxy.m
 //  ExampleBridge
 //
-//  Created by Alexey Kureev on 28/09/2016.
+//  Originally created by Alexey Kureev on 28/09/2016(adapted by Erik Peng on 01/03/2017).
 //  Copyright © 2016 oss. All rights reserved.
 //
 
-#import "JSProxy.h"
+#import "JSCoreProxy.h"
 
 #import "EBWindow.h"
 #import "AppDelegate.h"
@@ -16,7 +16,7 @@ static JSContext *jsContext;
 
 
 
-@implementation ChakraProxy
+@implementation JSCoreProxy
 
 
 -(void)render:(NSString *)name setWidth:(NSNumber *)width setHeight:(NSNumber *)height {
@@ -51,10 +51,10 @@ static JSContext *jsContext;
     jsContext = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     
     
-    ChakraProxy *render=[ChakraProxy new];
-
+    JSCoreProxy *render=[JSCoreProxy new];
+    
     jsContext[@"bridge"] = render;
-
+    
     
     // SetupGlobalEnvironment();
     

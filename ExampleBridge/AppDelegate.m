@@ -22,7 +22,7 @@
 }
 
 - (void)runJSVMThread {
-    [[[ChakraProxy alloc] init] run];
+    [[[JSCoreProxy alloc] init] run];
     
     NSRunLoop *runloop = [NSRunLoop currentRunLoop];
     

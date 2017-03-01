@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54D688971E65EACC0042144D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D688961E65EACC0042144D /* JavaScriptCore.framework */; };
-		54D688991E65F80B0042144D /* JSProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D688981E65F80B0042144D /* JSProxy.m */; };
+		54D688991E65F80B0042144D /* JSCoreProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D688981E65F80B0042144D /* JSCoreProxy.m */; };
 		A676F6BA1DB66E5700992CEF /* EBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A676F6B91DB66E5700992CEF /* EBWindow.m */; };
 		A676F6C21DB8077500992CEF /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = A676F6C11DB8077500992CEF /* main.js */; };
 		A676F6C51DB8127E00992CEF /* EBUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A676F6C41DB8127E00992CEF /* EBUIManager.m */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		54D688961E65EACC0042144D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		54D688981E65F80B0042144D /* JSProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSProxy.m; path = Source/JSProxy.m; sourceTree = "<group>"; };
+		54D688981E65F80B0042144D /* JSCoreProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSCoreProxy.m; path = Source/JSCoreProxy.m; sourceTree = "<group>"; };
 		A676F6B81DB66E5700992CEF /* EBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EBWindow.h; path = Source/EBWindow.h; sourceTree = "<group>"; };
 		A676F6B91DB66E5700992CEF /* EBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EBWindow.m; path = Source/EBWindow.m; sourceTree = "<group>"; };
 		A676F6C11DB8077500992CEF /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ExampleBridge/main.js; sourceTree = "<group>"; };
@@ -30,7 +30,7 @@
 		A6F463B31D99D0BF007E3240 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6F463B61D99D0BF007E3240 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6F463BD1D99D0BF007E3240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6F463C41D9C0757007E3240 /* JSProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSProxy.h; path = Source/JSProxy.h; sourceTree = "<group>"; };
+		A6F463C41D9C0757007E3240 /* JSCoreProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSCoreProxy.h; path = Source/JSCoreProxy.h; sourceTree = "<group>"; };
 		A6F463C71D9C085E007E3240 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +104,8 @@
 		A6F463C31D9C073D007E3240 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A6F463C41D9C0757007E3240 /* JSProxy.h */,
-				54D688981E65F80B0042144D /* JSProxy.m */,
+				A6F463C41D9C0757007E3240 /* JSCoreProxy.h */,
+				54D688981E65F80B0042144D /* JSCoreProxy.m */,
 				A676F6B81DB66E5700992CEF /* EBWindow.h */,
 				A676F6B91DB66E5700992CEF /* EBWindow.m */,
 				A676F6C31DB8127E00992CEF /* EBUIManager.h */,
@@ -184,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D688991E65F80B0042144D /* JSProxy.m in Sources */,
+				54D688991E65F80B0042144D /* JSCoreProxy.m in Sources */,
 				A676F6BA1DB66E5700992CEF /* EBWindow.m in Sources */,
 				A676F6C51DB8127E00992CEF /* EBUIManager.m in Sources */,
 				A6F463B71D99D0BF007E3240 /* main.m in Sources */,

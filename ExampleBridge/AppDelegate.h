@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "JSProxy.h"
+#import "JSCoreProxy.h"
 #import "EBWindow.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
