@@ -22,6 +22,7 @@
 }
 
 - (void)runJSVMThread {
+
     [[[JSCoreProxy alloc] init] run];
     
     NSRunLoop *runloop = [NSRunLoop currentRunLoop];

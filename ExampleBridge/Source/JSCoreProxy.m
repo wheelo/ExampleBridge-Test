@@ -8,7 +8,7 @@
 
 #import "JSCoreProxy.h"
 
-#import "EBWindow.h"
+// #import "EBWindow.h"
 #import "AppDelegate.h"
 
 
@@ -19,9 +19,13 @@ static JSContext *jsContext;
 @implementation JSCoreProxy
 
 
+
 -(void)render:(NSString *)name setWidth:(NSNumber *)width setHeight:(NSNumber *)height {
     
     NSString *type = name;
+    
+    NSLog(@"Rendering");
+    
     
     // to CGFloat
     // double w {ChakraUtils::toDouble(arguments[2])};
@@ -30,10 +34,34 @@ static JSContext *jsContext;
     dispatch_async(dispatch_get_main_queue(), ^{
         id delegate = [[NSApplication sharedApplication] delegate];
         
+        
         [delegate renderElementOfType:type size:NSMakeSize([width doubleValue], [height doubleValue])];
     });
     
 }
+
+
+
+-(void)SetupGlobalEnvironment {
+    jsContext = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+    
+    
+    [jsContext setExceptionHandler:^(JSContext *ctx, JSValue *expectValue) {
+        NSLog(@"%@", expectValue);
+    }];
+    
+    jsContext[@"log"] = ^(NSString *str) {
+        NSLog(@"%@", str);
+    };
+    
+    
+    // can't find render method, huge bug..
+    jsContext[@"bridge"] = self;
+    
+}
+
+
+
 
 -(void)run {
     // unsigned currentSourceContext = 0;
@@ -47,24 +75,15 @@ static JSContext *jsContext;
         NSLog(@"Error reading file: %@", error.localizedDescription);
     
     
+    // JSCoreProxy *jsProxy = [JSCoreProxy new];
     
-    jsContext = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+    [self SetupGlobalEnvironment];
     
-    
-    JSCoreProxy *render=[JSCoreProxy new];
-    
-    jsContext[@"bridge"] = render;
-    
-    
-    // SetupGlobalEnvironment();
     
     
     // Run the script.
     [jsContext evaluateScript:fileContents];
-    
-    
-    // Run the script.
-    //JsRunScriptUtf8(script, currentSourceContext++, "", nullptr);
+  
 }
 
 @end

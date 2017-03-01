@@ -301,6 +301,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oss.ExampleBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.11;
 				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Debug;
@@ -324,6 +325,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oss.ExampleBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.11;
 				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;

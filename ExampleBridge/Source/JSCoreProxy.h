@@ -11,18 +11,23 @@
 
 
 @protocol JSCoreProxyExport <JSExport>
+
 -(void)render:(NSString *)name setWidth:(NSNumber *)width setHeight:(NSNumber *)height;
 // support callback
-// -(void)render:(NSString *)message;
+-(void)SetupGlobalEnvironment;
+
 
 @end
 
 
+// @interface ViewController : UIViewController<JSCoreProxyExport>
+
 
 @interface JSCoreProxy : NSObject<JSCoreProxyExport>
-
 // strong or weak ?
 //@property (strong, nonatomic) JSContext *jsContext;
+-(void)render:(NSString *)name setWidth:(NSNumber *)width setHeight:(NSNumber *)height;
+-(void)SetupGlobalEnvironment;
 
 -(void)run;
 
